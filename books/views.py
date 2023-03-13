@@ -9,7 +9,7 @@ def search_results(request):
     search_post = request.GET.get('search')
     if search_post:
         posts = File.objects.filter (name__icontains=search_post)
-        print(posts)
+        
     else:
         posts = File.objects.all()
     return render(request, "books/list.html", {"posts":posts})   
@@ -27,3 +27,5 @@ def showfile(request):
       
     return render(request, 'books/upload.html', context)
 
+def redirect_to_page(request):
+    return redirect("search")
