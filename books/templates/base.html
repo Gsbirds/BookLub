@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Philhub</title>
+    <title>BookLub</title>
     <link rel="stylesheet" href="{% static "css/books.css" %}">
 
 <title>
@@ -15,17 +15,16 @@
 
 <body>
     <header>
-        <nav>
-            <ul>
-                <li>
-                    <a href={% url 'search' %}>Search Books</a>
-                </li>
-                <li>
-                    <a href={% url 'upload' %}>Upload</a>
-                </li>
-            
+        <input type="checkbox" id="nav-menu1">
+        <label id="nav-icon1" for="nav-menu1">
+          <span>      <nav>
+            <ul class="navItems">
+    
+              <li>  <a href={% url 'search' %}>Search Books</a></li>
+              <li> <a href={% url 'upload' %}>Upload</a></li>
+
             </ul>
-        </nav>
+          </nav></span>
     </header>
 {% block content %}
 

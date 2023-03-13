@@ -6,17 +6,19 @@ Upload
 {% block content %}
 
     <main>
-    <h2>Books to Lub</h2>
+    <h1>Books to Lub</h1>
         <form action="{% url 'search' %}">   
-         <input type="search"  
+         <input class=search type="search"  
           placeholder="Search" aria-label="Search" name="search">    
           <button type="submit">Search</button>
         </form>
     
         {% for post in posts %}
-        <div>
-        <a href="{{ MEDIA_URL }}{{ post.filepath }}">{{ post.name }}</a>
-        </div>
+        <div >
+            <li class="fileslist">
+        <a class= "files" href="{{ MEDIA_URL }}{{ post.filepath }}">{{ post.name }}</a>
+    </li>    
+    </div>
         {% endfor %}
         
     </main>
