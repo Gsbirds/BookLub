@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Philhub</title>
+    <link rel="stylesheet" href="{% static "css/books.css" %}">
+
+<title>
+    {% block title %} {% endblock title %}
+</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href={% url 'search' %}>Search Books</a>
+                </li>
+                <li>
+                    <a href={% url 'upload' %}>Upload</a>
+                </li>
+            
+            </ul>
+        </nav>
+    </header>
+{% block content %}
+
+{% endblock content%}
+
+<footer> 
+    <p>Copyright BookLub 2023</p>
+    <p></p>
+</footer>
+</body>
