@@ -19,10 +19,18 @@
         <label id="nav-icon1" for="nav-menu1">
           <span>      <nav>
             <ul class="navItems">
-    
-              <li>  <a href={% url 'search' %}>Search Books</a></li>
+              <li class="pink">
+                <li>  <a href={% url 'search' %}>Search Books</a></li>
+                {% if user.is_authenticated %}
+               <li>Hello, {{user.username}} </li> 
               <li> <a href={% url 'upload' %}>Upload</a></li>
+            <li> <a href={% url 'user_logout' %}>Logout</a></li>  
+            {% else %}
 
+            <li><a href={% url 'signup' %}>Sign Up</a></li>
+        
+            <li><a href={% url 'user_login' %}>Sign in</a></li>
+            {% endif %}
             </ul>
           </nav></span>
     </header>

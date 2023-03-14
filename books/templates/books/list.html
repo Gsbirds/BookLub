@@ -12,6 +12,12 @@ Upload
           placeholder="Search" aria-label="Search" name="search">    
           <button type="submit">Search</button>
         </form>
+
+        <form action="{% url 'search' %}">   
+            <input class=search type="search"  
+             placeholder="Search" aria-label="Search" name="search">    
+             <button type="submit">Search</button>
+           </form>
     
         {% for post in posts %}
         <div >
@@ -22,6 +28,6 @@ Upload
         {% endfor %}
         
     </main>
-
+   
 
     {% endblock content %}

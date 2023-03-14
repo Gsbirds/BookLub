@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block content %}
+
+<main>
+    <h1>Login</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Login</button>
+    </form>
+</main>
+
+{% endblock content %}
+

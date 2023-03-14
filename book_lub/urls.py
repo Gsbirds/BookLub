@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('booklub/', include ("books.urls")),
     path("", redirect_to_page, name="home_page"),
+    path("accounts/", include("accounts.urls")),
     
 ]+ static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
 
