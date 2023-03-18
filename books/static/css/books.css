@@ -49,7 +49,7 @@ body {
 }
 
 #nav-menu1:checked~#nav-icon1 span:nth-child(1) {
-width:375px;
+width:700px;
 }
 
 

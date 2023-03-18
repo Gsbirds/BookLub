@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% block title %}
 Upload
 {% endblock title %}
@@ -13,8 +14,8 @@ Upload
           <button type="submit">Search</button>
         </form>
 
-        <form action="{% url 'search' %}">   
-            <input class=search type="search"  
+        <form action="{% url 'word_search' %}">   
+            <input class=search type="search_words"  
              placeholder="Search" aria-label="Search" name="search">    
              <button type="submit">Search</button>
            </form>
@@ -22,11 +23,11 @@ Upload
         {% for post in posts %}
         <div >
             <li class="fileslist">
-        <a class= "files" href="{{ MEDIA_URL }}{{ post.filepath }}">{{ post.name }}</a>
+        <a class= "files" href="{{ MEDIA_URL }}{{ post.filepath }}">{{post.filename}}</a>
     </li>    
     </div>
         {% endfor %}
-        
+
     </main>
    
 
