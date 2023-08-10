@@ -24,7 +24,7 @@ def signup(request):
 
                 login(request, user)
 
-                return redirect("show_page")
+                return redirect("search")
     else:
         form = SignUpForm()
     context= {

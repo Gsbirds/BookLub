@@ -7,5 +7,5 @@ class FileForm(forms.ModelForm):
         model= File
         fields= ["filepath"]
         widgets = {
-            "filepath": ClearableFileInput(attrs={"multiple": True}),
+            "filepath": ClearableFileInput(),
         }
