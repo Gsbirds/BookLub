@@ -1,1 +1,1 @@
-web: gunicorn book_lub.wsgi:app
+web: gunicorn book_lub.wsgi:application
