@@ -11,15 +11,19 @@ class File(models.Model):
         on_delete=models.CASCADE,
         null=True
     )
+    words=models.TextField(blank=True)
+
     def filename(self):
         return os.path.basename(self.filepath.name)
     
-class Common_words(models.Model):
-    file=models.ForeignKey(
+
+class CommonWords(models.Model):
+    pdf = models.ForeignKey(
         File,
-        related_name="file",
-        on_delete=models.CASCADE,
-        null=True
+        related_name="common_words",
+        on_delete=models.CASCADE
     )
-    words=models.CharField(max_length=500)
-    number= models.CharField(max_length=2)
+    word = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.word

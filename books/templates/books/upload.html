@@ -12,7 +12,12 @@ Upload
             {{ form.as_p }}
             <input class="upload" type="submit" value="Upload"/>
             </form>
-   
+            
+            <ul>
+                {% for word, count in top_100_words %}
+                  <li>{{ word }} - {{ count }}</li>
+                {% endfor %}
+              </ul>
         
         </main>
 

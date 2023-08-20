@@ -1,0 +1,12 @@
+<ul>
+    {% for pdf in pdfs %}
+    <li>
+        <p>PDF: {{ pdf.filename }}</p>
+        <ul>
+            {% for word in pdf.common_words.all %}
+            <li>{{ word.word }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+</ul>

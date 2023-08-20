@@ -10,23 +10,29 @@ Upload
     <h1>Books to Lub</h1>
         <form action="{% url 'search' %}">   
          <input class=search type="search"  
-          placeholder="Search" aria-label="Search" name="search">    
+          placeholder="Search by File" aria-label="Search" name="search">    
           <button type="submit">Search</button>
         </form>
-<!-- 
-        <form action="{% url 'word_search' %}">   
-            <input class=search type="search_words"  
-             placeholder="Search" aria-label="Search" name="search">    
+
+        <form action="{% url 'search_words' %}">   
+            <input class=search type="search"  
+             placeholder="Search Common Words" aria-label="Search" name="search">    
              <button type="submit">Search</button>
            </form>
     
         {% for post in posts %}
-        <div > -->
+        <div > 
             <li class="fileslist">
         <a class= "files" href="{{ MEDIA_URL }}{{ post.filepath }}">{{post.filename}}</a>
     </li>    
     </div>
         {% endfor %}
+
+        <div>
+            <li class="fileslist">
+            {{posts1.word}}
+            </li>   
+        </div>
 
     </main>
    

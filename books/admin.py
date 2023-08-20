@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import File, Common_words
+from .models import File, CommonWords
 
 # Register your models here.
 class FileAdmin(admin.ModelAdmin):
@@ -10,12 +10,10 @@ class FileAdmin(admin.ModelAdmin):
     )
 admin.site.register(File, FileAdmin)
 
-class Common_wordsAdmin(admin.ModelAdmin):
+class CommonWordsAdmin(admin.ModelAdmin):
     list_display=(
-        "file",
-        "words",
-        "number",
-        "id"
+        "pdf",
+        "word",
     )
-admin.site.register(Common_words, Common_wordsAdmin)
+admin.site.register(CommonWords, CommonWordsAdmin)
 
