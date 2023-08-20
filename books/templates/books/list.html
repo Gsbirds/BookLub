@@ -29,9 +29,11 @@ Upload
         {% endfor %}
 
         <div>
+            {% for post in posts1%}
             <li class="fileslist">
-            {{posts1.word}}
+        <a class= "files" href="{{ MEDIA_URL }}{{ post.filepath }}">{{post.filename}}</a>
             </li>   
+            {% endfor %}
         </div>
 
     </main>

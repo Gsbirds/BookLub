@@ -18,7 +18,7 @@ def search_words(request):
     posts1= File.objects.all()
     search_word = request.GET.get('search')
     if search_word:
-        posts1 = CommonWords.objects.filter (word__icontains=search_word)
+        posts1 = File.objects.filter(common_words__word__icontains=search_word)
         print(posts1)
     else:
         posts1 = File.objects.all()
