@@ -3,19 +3,21 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from accounts.forms import SignUpForm
 from accounts.forms import LogInForm
+
+
 # Create your views here.
 def signup(request):
-    if request.method=="POST":
-        form= SignUpForm(request.POST)
+    if request.method == "POST":
+        form = SignUpForm(request.POST)
         if form.is_valid():
-            username= form.cleaned_data['username']
-            password= form.cleaned_data['password']
-            password_confirmation=form.cleaned_data['password_confirmation']
-            first_name=form.cleaned_data['first_name']
-            last_name= form.cleaned_data['last_name']
+            username = form.cleaned_data["username"]
+            password = form.cleaned_data["password"]
+            password_confirmation = form.cleaned_data["password_confirmation"]
+            first_name = form.cleaned_data["first_name"]
+            last_name = form.cleaned_data["last_name"]
 
-            if password== password_confirmation:
-                user= User.objects.create_user(
+            if password == password_confirmation:
+                user = User.objects.create_user(
                     username,
                     password=password,
                     first_name=first_name,
@@ -27,17 +29,18 @@ def signup(request):
                 return redirect("search")
     else:
         form = SignUpForm()
-    context= {
-        "form":form,
+    context = {
+        "form": form,
     }
     return render(request, "accounts/signup.html", context)
 
+
 def user_login(request):
-    if request.method== "POST":
-        form= LogInForm(request.POST)
+    if request.method == "POST":
+        form = LogInForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data['username']
-            password= form.cleaned_data['password']
+            username = form.cleaned_data["username"]
+            password = form.cleaned_data["password"]
 
             user = authenticate(
                 request,
@@ -48,11 +51,12 @@ def user_login(request):
                 login(request, user)
                 return redirect("search")
     else:
-        form= LogInForm()
+        form = LogInForm()
     context = {
-        "form":form,
+        "form": form,
     }
     return render(request, "accounts/login.html", context)
+
 
 def user_logout(request):
     logout(request)
