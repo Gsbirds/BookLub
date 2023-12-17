@@ -10,6 +10,13 @@ html {
   box-sizing: inherit;
 }
 
+.signin{
+  color:#8898a6;
+}
+
+.signup{
+  color:#8898a6;
+}
 .pink{
   color: darkblue;
 }
